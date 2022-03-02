@@ -26,6 +26,10 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 - [ ] Integración con la API de Feedly
 
 
+## [1.0.1] - 2022-03-02
+### Arreglado
+- Calidad de código
+
 ### [1.0.0] - 2022-03-02
 ### Añadido
 - Script con las funcionalidades esperadas

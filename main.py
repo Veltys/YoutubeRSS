@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+
 '''!
+    YoutubeRSS
+
     @file:           main.py
     @brief:          Sistema lector de los canales suscritos de YouTube dado un usuario concreto
 
     @author:         Veltys
     @Date:           2022-03-02
-    @version:        1.0.0
+    @version:        1.0.1
     @usage:          python3 main.py channelID [-f FILENAME]
-    @note:            
+    @note:
 '''
 
 
@@ -29,10 +33,11 @@ if DEBUG:
 
 
 def parseClArgs(argv):
-    '''! Procesa los argumentos pasados al programa
-    
+    '''!
+        Procesa los argumentos pasados al programa
+
         @param argv:    Vector de argumentos
-    
+
         @return:        Argumentos procesados
     '''
 
@@ -46,10 +51,11 @@ def parseClArgs(argv):
 
 
 def apiQuery(channel):
-    '''! Realiza la consulta contra la API de Youtube de forma iterativa hasta obtener todos los resultados y la devuelve
-    
+    '''!
+        Realiza la consulta contra la API de Youtube de forma iterativa hasta obtener todos los resultados y la devuelve
+
         @param channel:     ID del usuario de Youtube a procesar
-        
+
         @return:            Respuesta de la API
     '''
 
@@ -87,7 +93,7 @@ def apiQuery(channel):
                 pageToken = responses[-1]['nextPageToken']
             )
 
-        except:
+        except KeyError:
             break
 
         else:
@@ -97,10 +103,11 @@ def apiQuery(channel):
 
 
 def generateOPML(responses):
-    '''! Genera un archivo OPML 1.0 válido según https://web.archive.org/web/20160304125338/http://dev.opml.org/spec1.html
-    
+    '''!
+        Genera un archivo OPML 1.0 válido según https://web.archive.org/web/20160304125338/http://dev.opml.org/spec1.html
+
         @param responses:   Respuesta de la API de Youtube
-        
+
         @return:            Documento en formato OPML
     '''
 
@@ -127,11 +134,12 @@ def generateOPML(responses):
 
 
 def saveFile(file, filename):
-    '''! Guarda el contenido de la variable en el archivo seleccionado
-    
+    '''!
+        Guarda el contenido de la variable en el archivo seleccionado
+
         @param file:        Contenido del archivo a guardar
         @param filename:    Nombre del archivo a guardar
-        
+
         @return:            Resultado de la operación de guardado (True / False)
     '''
 
@@ -149,8 +157,9 @@ def saveFile(file, filename):
 
 
 def main(argv):
-    '''! Ejecuta las operaciones necesarias para generar el archivo
-    
+    '''!
+        Ejecuta las operaciones necesarias para generar el archivo
+
         @param argv:    Argumentos del programa
 
         @return:        Código de retorno
