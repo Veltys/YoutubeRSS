@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Archivos de Eclipse
+/.project
+/.pydevproject
+/.settings/
+
+# Otros
+/client_secret.json
+/debug_data.pkl
+/*.opml
