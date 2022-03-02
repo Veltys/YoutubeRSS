@@ -1,4 +1,7 @@
 # YoutubeRSS
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bf05ef91403941c4868e528d51488594)](https://app.codacy.com/gh/Veltys/YoutubeRSS?utm_source=github.com&utm_medium=referral&utm_content=Veltys/YoutubeRSS&utm_campaign=Badge_Grade_Settings)
+
 Small Python program to get a Youtube user's subscriptions and convert them to OPML 1.0 format
 
 
