@@ -1,5 +1,5 @@
 # YoutubeRSS
-Small Python program to get a Youtube user's subscriptions and convert them to OPML 1.0 format
+Small Python program to get a Youtube user's subscriptions and convert them to OPML 1.0 format [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b0c10762c14877a1926981b9dd64bf)](https://www.codacy.com/gh/Veltys/YoutubeRSS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/YoutubeRSS&amp;utm_campaign=Badge_Grade)
 
 
 ## Descripción
