@@ -16,9 +16,6 @@
 '''
 
 
-DEBUG = True                                                                    # Depuración
-
-
 from html import escape                                                         # Funcionalidad de codificación de entidades HTML
 import argparse                                                                 # Funcionalidades del procesador de argumentos
 import os                                                                       # Funcionalidades varias del sistema operativo
@@ -27,10 +24,6 @@ import sys                                                                      
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
 # import googleapiclient.errors
-
-
-if DEBUG:
-    import pickle                                                               # Funcionalidades de serialización de datos
 
 
 def parseClArgs(argv):
@@ -170,22 +163,8 @@ def main(argv):
 
     args = parseClArgs(argv)
 
-    if not DEBUG or (DEBUG and not os.path.isfile('debug_data.pkl')):
-        responses = apiQuery(args.channel)
+    responses = apiQuery(args.channel)
 
-        if DEBUG:
-            f = open('debug_data.pkl', 'wb')
-
-            pickle.dump(responses, f)
-
-            f.close()
-
-    else:
-        f = open('debug_data.pkl', 'rb')
-
-        responses = pickle.load(f)
-
-        f.close()
 
     if saveFile(generateOPML(responses), args.filename):
         print(f'Subscripciones guardadas correctamente en el archivo <{args.filename}>')
