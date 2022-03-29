@@ -9,8 +9,8 @@
     @brief:          Sistema lector de los canales suscritos de YouTube dado un usuario concreto
 
     @author:         Veltys
-    @Date:           2022-03-02
-    @version:        1.0.1
+    @Date:           2022-03-29
+    @version:        1.0.2
     @usage:          python3 main.py channelID [-f FILENAME]
     @note:
 '''
@@ -19,6 +19,7 @@
 DEBUG = True                                                                    # Depuración
 
 
+from html import escape                                                         # Funcionalidad de codificación de entidades HTML
 import argparse                                                                 # Funcionalidades del procesador de argumentos
 import os                                                                       # Funcionalidades varias del sistema operativo
 import sys                                                                      # Funcionalidades varias del sistema
@@ -122,7 +123,9 @@ def generateOPML(responses):
 
     for r in responses:
         for _, i in enumerate(r['items']):
-            opml += "\n" + f'        <outline type="rss" text="{i["snippet"]["title"]}" title="{i["snippet"]["title"]}" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id={i["snippet"]["resourceId"]["channelId"]}" htmlUrl="https://www.youtube.com/channel/{i["snippet"]["resourceId"]["channelId"]}" />'
+            title = escape(i["snippet"]["title"])
+
+            opml += "\n" + f'        <outline type="rss" text="{title}" title="{title}" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id={i["snippet"]["resourceId"]["channelId"]}" htmlUrl="https://www.youtube.com/channel/{i["snippet"]["resourceId"]["channelId"]}" />'
 
     opml += '''
         </outline>
