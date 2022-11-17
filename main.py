@@ -16,7 +16,7 @@
 '''
 
 
-DEBUG = True                                                                    # Depuración
+DEBUG = False                                                                   # Depuración
 
 
 from html import escape                                                         # Funcionalidad de codificación de entidades HTML
