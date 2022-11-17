@@ -150,11 +150,11 @@ def generateOPML(responses):
     return opml
 
 
-def saveFile(file, filename):
+def saveFile(content, filename):
     '''!
         Guarda el contenido de la variable en el archivo seleccionado
 
-        @param file:        Contenido del archivo a guardar
+        @param content:     Contenido del archivo a guardar
         @param filename:    Nombre del archivo a guardar
 
         @return:            Resultado de la operación de guardado (True / False)
@@ -167,7 +167,7 @@ def saveFile(file, filename):
         return False
 
     else:
-        f.write(file + "\n")
+        f.write(content + "\n")
         f.close()
 
         return True
