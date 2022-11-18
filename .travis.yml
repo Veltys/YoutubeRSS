@@ -6,8 +6,23 @@
 # Usage         : (usado externamente)
 # Notes         : 
 
-
+os: linux
+dist: jammy
 language: python
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+  - tar xvf secrets.tar
+
+install:
+  - pip3 install --upgrade pip || python -m pip install --upgrade pip
+  - pip install -r requirements.txt
+
+script:
+  - python3 main.py $ChannelID || python main.py $ChannelID
+# - cat "Youtube subscriptions.opml"
+
+
 jobs:
   include:
    - name: "Python 3.6 on Ubuntu Focal"
@@ -17,64 +32,40 @@ jobs:
      python: 3.6
 
    - name: "Python 3.7 on Ubuntu Jammy"
-     os: linux
-     dist: jammy
-     language: python
      python: 3.7
 
    - name: "Python 3.8 on Ubuntu Jammy"
-     os: linux
-     dist: jammy
-     language: python
      python: 3.8
 
    - name: "Python 3.9 on Ubuntu Jammy"
-     os: linux
-     dist: jammy
-     language: python
      python: 3.9
 
-
    - name: "Python 3.10 on Ubuntu Jammy"
-     os: linux
-     dist: jammy
-     language: python
      python: 3.10
 
-
    - name: "Python 3.11 on Ubuntu Jammy"
-     os: linux
-     dist: jammy
-     language: python
      python: 3.11
 
 
    - name: "Python 3.6 on FreeBSD"
      os: freebsd
-     language: python
      python: 3.6
 
    - name: "Python 3.7 on FreeBSD"
      os: freebsd
-     language: python
      python: 3.7
 
    - name: "Python 3.8 on FreeBSD"
      os: freebsd
-     language: python
      python: 3.8
 
    - name: "Python 3.9 on FreeBSD"
      os: freebsd
-     language: python
      python: 3.9
-
 
    - name: "Python 3.10 on FreeBSD"
      os: freebsd
-     language: python
      python: 3.10
-
 
 # Aún no disponible:
 #   - name: "Python 3.11 on FreeBSD"
@@ -145,16 +136,3 @@ jobs:
 #      - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
 #      - tar xvf secrets.tar
 #    env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
-
-
-before_install:
-  - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
-  - tar xvf secrets.tar
-
-install:
-  - pip3 install --upgrade pip || python -m pip install --upgrade pip
-  - pip install -r requirements.txt
-
-script:
-  - python3 main.py $ChannelID || python main.py $ChannelID
-# - cat "Youtube subscriptions.opml"
