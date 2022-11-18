@@ -34,6 +34,8 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 
 ### Arreglado
 - Error en el formato de este archivo
+- Cambio en la autenticación de la API de Google
+- Más controles de errores
 
 ## [1.0.2] - 2022-03-29
 ### Arreglado

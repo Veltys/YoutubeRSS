@@ -9,8 +9,8 @@
     @brief:          Sistema lector de los canales suscritos de YouTube dado un usuario concreto
 
     @author:         Veltys
-    @Date:           2022-03-29
-    @version:        1.0.2
+    @Date:           2022-11-18
+    @version:        1.0.3
     @usage:          python3 main.py channelID [-f FILENAME]
     @note:
 '''
@@ -24,9 +24,10 @@ import argparse                                                                 
 import os                                                                       # Funcionalidades varias del sistema operativo
 import sys                                                                      # Funcionalidades varias del sistema
 
-import google_auth_oauthlib.flow
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 import googleapiclient.discovery
-# import googleapiclient.errors
 
 
 if DEBUG:
@@ -69,11 +70,24 @@ def apiQuery(channel):
     api_service_name = 'youtube'
     api_version = 'v3'
     client_secrets_file = 'client_secret.json'
+    token_file = 'token.json'
+    creds = None
 
-    # Get credentials and create an API client
-    flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(client_secrets_file, scopes)
-    credentials = flow.run_console()
-    youtube = googleapiclient.discovery.build(api_service_name, api_version, credentials = credentials)
+    if os.path.exists(token_file):
+        creds = Credentials.from_authorized_user_file(token_file, scopes)
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(client_secrets_file, scopes)
+            creds = flow.run_local_server(port = 0)
+
+        if not saveFile(creds.to_json(), token_file):
+            print(f'Aviso: Error al guardar las credenciales de acceso a las subscripciones en el archivo <{token_file}>.', file = sys.stderr)
+            print(f'Aviso: Ha sido imposible guardar las credenciales de acceso a las subscripciones en el archivo <{token_file}>. Se puede continuar, pero la próxima vez se volverán a pedir.')
+
+    youtube = googleapiclient.discovery.build(api_service_name, api_version, credentials = creds)
 
     responses = []
 
@@ -187,11 +201,15 @@ def main(argv):
 
         f.close()
 
-    if saveFile(generateOPML(responses), args.filename):
-        print(f'Subscripciones guardadas correctamente en el archivo <{args.filename}>')
+    if not responses:
+        sys.exit('Ha sido imposible recuperar las subscripciones. Por favor inténtelo de nuevo más tarde.')
 
     else:
-        sys.exit(f'Ha sido imposible guardar las subscripciones en el archivo <{args.filename}>. Por favor inténtelo de nuevo o elija otro nombre de archivo.')
+        if not saveFile(generateOPML(responses), args.filename):
+            sys.exit(f'Ha sido imposible guardar las subscripciones en el archivo <{args.filename}>. Por favor inténtelo de nuevo o elija otro nombre de archivo.')
+
+        else:
+            print(f'Subscripciones guardadas correctamente en el archivo <{args.filename}>')
 
 
 if __name__ == "__main__":
