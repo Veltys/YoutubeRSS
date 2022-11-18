@@ -89,33 +89,59 @@ jobs:
      language: shell       # 'language: python' is an error on Travis CI macOS
 
 
-#    - name: "Python 3.6 on Windows"
-#      os: windows
-#      language: shell       # 'language: python' is an error on Travis CI Windows
-#      before_install:
-#        - choco install python --version 3.6.0
-#      env: PATH=/c/Python36:/c/Python36/Scripts:$PATH
+   - name: "Python 3.6 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.6
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python36:/c/Python36/Scripts:$PATH
 
-#    - name: "Python 3.7 on Windows"
-#      os: windows
-#      language: shell       # 'language: python' is an error on Travis CI Windows
-#      before_install:
-#        - choco install python --version 3.7.0
-#      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+   - name: "Python 3.7 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.7
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
 
-#    - name: "Python 3.8 on Windows"
-#      os: windows
-#      language: shell       # 'language: python' is an error on Travis CI Windows
-#      before_install:
-#        - choco install python --version 3.8.0
-#      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+   - name: "Python 3.8 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.8
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
 
-#    - name: "Python 3.9 on Windows"
-#      os: windows
-#      language: shell       # 'language: python' is an error on Travis CI Windows
-#      before_install:
-#        - choco install python --version 3.9.0
-#      env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
+   - name: "Python 3.9 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.9
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
+
+   - name: "Python 3.10 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.10
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
+
+   - name: "Python 3.11 on Windows"
+     os: windows
+     language: shell       # 'language: python' is an error on Travis CI Windows
+     before_install:
+       - choco install python --version 3.11
+       - openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv -in secrets.tar.enc -out secrets.tar -d
+       - tar xvf secrets.tar
+     env: PATH=/c/Python39:/c/Python39/Scripts:$PATH
 
 
 before_install:
@@ -123,7 +149,7 @@ before_install:
   - tar xvf secrets.tar
 
 install:
-  - pip3 install --upgrade pip
+  - pip3 install --upgrade pip || python -m pip install --upgrade pip
   - pip install -r requirements.txt
 
 script:
