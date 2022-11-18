@@ -49,25 +49,37 @@ jobs:
      python: 3.11
 
 
-#    - name: "Python 3.6 on FreeBSD"
-#      os: freebsd
-#      language: python
-#      python: 3.6
+   - name: "Python 3.6 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.6
 
-#    - name: "Python 3.7 on FreeBSD"
-#      os: freebsd
-#      language: python
-#      python: 3.7
+   - name: "Python 3.7 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.7
 
-#    - name: "Python 3.8 on FreeBSD"
-#      os: freebsd
-#      language: python
-#      python: 3.8
+   - name: "Python 3.8 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.8
 
-#    - name: "Python 3.9 on FreeBSD"
-#      os: freebsd
-#      language: python
-#      python: 3.9
+   - name: "Python 3.9 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.9
+
+
+   - name: "Python 3.10 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.10
+
+
+   - name: "Python 3.11 on FreeBSD"
+     os: freebsd
+     language: python
+     python: 3.11
 
 
 #    - name: "Python 3.7.4 on macOS"
