@@ -76,10 +76,11 @@ jobs:
      python: 3.10
 
 
-   - name: "Python 3.11 on FreeBSD"
-     os: freebsd
-     language: python
-     python: 3.11
+# Aún no disponible:
+#   - name: "Python 3.11 on FreeBSD"
+#     os: freebsd
+#     language: python
+#     python: 3.11
 
 
 #    - name: "Python 3.7.4 on macOS"
