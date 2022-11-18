@@ -1,5 +1,5 @@
 # YoutubeRSS
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b0c10762c14877a1926981b9dd64bf)](https://www.codacy.com/gh/Veltys/YoutubeRSS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/YoutubeRSS&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b0c10762c14877a1926981b9dd64bf)](https://www.codacy.com/gh/Veltys/YoutubeRSS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/YoutubeRSS&amp;utm_campaign=Badge_Grade)  [![Build Status](https://app.travis-ci.com/Veltys/YoutubeRSS.svg?branch=testing)](https://app.travis-ci.com/Veltys/YoutubeRSS)
 
 Script en Python para obtener las suscripciones de un usuario de YouTube y convertirlas al formato OPML 1.0
 
