@@ -28,27 +28,31 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 - [ ] Integración con la API de Feedly
 
 
-## [1.0.3] - 2022-11-18
-### Añadido
-- Testeo en Travis CI
+### [1.0.4] - 2022-12-29
+#### Arreglado
+- Formato de **README.md**
 
-### Arreglado
+### [1.0.3] - 2022-11-18
+#### Añadido
+- Tests de CI en Travis CI
+
+#### Arreglado
 - Error en el formato de este archivo
 - Cambio en la autenticación de la API de Google
 - Más controles de errores
 - Refactorizaciones varias
 
-## [1.0.2] - 2022-03-29
-### Arreglado
+### [1.0.2] - 2022-03-29
+#### Arreglado
 - Los nombres de los canales necesitan ser *escapados*
 
-### Eliminado
+#### Eliminado
 - Código de depuración no necesario en la rama **master**
 
-## [1.0.1] - 2022-03-02
-### Arreglado
+### [1.0.1] - 2022-03-02
+#### Arreglado
 - Calidad de código
 
-## [1.0.0] - 2022-03-02
-### Añadido
+### [1.0.0] - 2022-03-02
+#### Añadido
 - Script con las funcionalidades esperadas
