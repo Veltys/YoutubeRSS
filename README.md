@@ -1,5 +1,10 @@
 # YoutubeRSS
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b0c10762c14877a1926981b9dd64bf)](https://www.codacy.com/gh/Veltys/YoutubeRSS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/YoutubeRSS&amp;utm_campaign=Badge_Grade)  [![Build Status](https://app.travis-ci.com/Veltys/YoutubeRSS.svg?branch=testing)](https://app.travis-ci.com/Veltys/YoutubeRSS)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b0c10762c14877a1926981b9dd64bf)](https://www.codacy.com/gh/Veltys/YoutubeRSS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Veltys/YoutubeRSS&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://github.com/Veltys/YoutubeRSS/actions/workflows/tester.yml/badge.svg?branch=testing)](https://github.com/Veltys/YoutubeRSS/actions)
+[![GitHub release](https://img.shields.io/github/release/Veltys/YoutubeRSS.svg)](https://GitHub.com/Veltys/YoutubeRSS/releases/)
+[![GitHub commits](https://badgen.net/github/commits/Veltys/YoutubeRSS)](https://GitHub.com/Veltys/YoutubeRSS/commit/)
+[![GitHub latest commit](https://badgen.net/github/last-commit/Veltys/YoutubeRSS)](https://GitHub.com/Veltys/YoutubeRSS/commit/)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/Veltys/YoutubeRSS/blob/master/LICENSE)
 
 Script en Python para obtener las suscripciones de un usuario de YouTube y convertirlas al formato OPML 1.0
 
@@ -29,6 +34,8 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 
 
 ### [1.0.4] - 2022-12-29
+#### Añadido
+- Badges
 #### Arreglado
 - Formato de **README.md**
 
