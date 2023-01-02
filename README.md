@@ -39,6 +39,9 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 #### Arreglado
 - Formato de **README.md**
 
+#### Borrado
+- Tests de CI en Travis CI
+
 ### [1.0.3] - 2022-11-18
 #### Añadido
 - Tests de CI en Travis CI
