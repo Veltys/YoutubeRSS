@@ -36,6 +36,8 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 ### [1.0.4] - 2022-12-29
 #### Añadido
 - Badges
+- Tests de CI en GitHub Actions
+
 #### Arreglado
 - Formato de **README.md**
 
