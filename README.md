@@ -33,7 +33,7 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 - [ ] Integración con la API de Feedly
 
 
-### [1.0.4] - 2022-12-29
+### [1.0.4] - 2023-01-03
 #### Añadido
 - Badges
 - Tests de CI en GitHub Actions
