@@ -2,7 +2,7 @@
 # Description   : Configures GitHub Actions to perform integration tests
 # Author        : Veltys
 # Date          : 2023-01-02
-# Version       : 2.0.0
+# Version       : 2.0.1
 # Usage         : (used externally)
 # Notes         : 
 
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version:	["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version:	["3.7", "3.8", "3.9", "3.10", "3.11"]
         os:				[ubuntu-latest, windows-latest, macos-latest]
 
     steps:
