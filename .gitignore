@@ -136,6 +136,6 @@ dmypy.json
 # Otros
 /client_secret.json
 /debug_data.pkl
-/secrets.tar
+/secrets.tgz
 /token.json
 /*.opml
