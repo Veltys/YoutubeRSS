@@ -35,6 +35,7 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 
 ### [1.0.5] - 2023-01-08
 #### Arreglado
+- Calidad de código
 - **README.md** más completo
 
 ### [1.0.4] - 2023-01-03

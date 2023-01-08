@@ -9,15 +9,15 @@
     @brief:          Sistema lector de los canales suscritos de YouTube dado un usuario concreto
 
     @author:         Veltys
-    @Date:           2022-11-18
-    @version:        1.0.3
+    @Date:           2023-01-08
+    @version:        1.0.4
     @usage:          python3 main.py channelID [-f FILENAME]
     @note:
 '''
 
 
-DEBUG = False                                                                   # Depuración
-
+DEBUG           = False                                                         # Depuración
+DEBUG_DATA_FILE = 'debug_data.pkl'                                              # Archivo de depuración
 
 from html import escape                                                         # Funcionalidad de codificación de entidades HTML
 import argparse                                                                 # Funcionalidades del procesador de argumentos
@@ -188,14 +188,14 @@ def main(argv):
         responses = apiQuery(args.channel)
 
         if DEBUG:
-            f = open('debug_data.pkl', 'wb')
+            f = open(DEBUG_DATA_FILE, 'wb')
 
             pickle.dump(responses, f)
 
             f.close()
 
     else:
-        f = open('debug_data.pkl', 'rb')
+        f = open(DEBUG_DATA_FILE, 'rb')
 
         responses = pickle.load(f)
 
