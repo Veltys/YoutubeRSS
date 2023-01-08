@@ -9,8 +9,8 @@
     @brief:          Sistema lector de los canales suscritos de YouTube dado un usuario concreto
 
     @author:         Veltys
-    @Date:           2022-11-18
-    @version:        1.0.3
+    @Date:           2023-01-08
+    @version:        1.0.4
     @usage:          python3 main.py channelID [-f FILENAME]
     @note:
 '''
@@ -178,7 +178,6 @@ def main(argv):
     args = parseClArgs(argv)
 
     responses = apiQuery(args.channel)
-
 
     if not responses:
         sys.exit('Ha sido imposible recuperar las subscripciones. Por favor inténtelo de nuevo más tarde.')
