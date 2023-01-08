@@ -33,33 +33,37 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 - [ ] Integración con la API de Feedly
 
 
+### [1.0.5] - 2023-01-08
+#### Arreglado
+- **README.md** más completo
+
 ### [1.0.4] - 2023-01-03
 #### Añadido
-- Badges
-- Tests de CI en GitHub Actions
+- Badges en **README.md**
+- Tests de CI en GitHub Actions en **.github/workflow/tester.yml**
 
 #### Arreglado
 - Formato de **README.md**
 
 #### Borrado
-- Tests de CI en Travis CI
+- Tests de CI en Travis CI en **.travis.yml**
 
 ### [1.0.3] - 2022-11-18
 #### Añadido
-- Tests de CI en Travis CI
+- Tests de CI en Travis CI en **.travis.yml**
 
 #### Arreglado
-- Error en el formato de este archivo
-- Cambio en la autenticación de la API de Google
-- Más controles de errores
-- Refactorizaciones varias
+- Error en el formato de **README.md**
+- Cambio en la autenticación de la API de Google en **main.py**
+- Más controles de errores en **main.py**
+- Refactorizaciones varias en **main.py**
 
 ### [1.0.2] - 2022-03-29
 #### Arreglado
-- Los nombres de los canales necesitan ser *escapados*
+- Los nombres de los canales necesitan ser *escapados* en **main.py**
 
 #### Eliminado
-- Código de depuración no necesario en la rama **master**
+- Código de depuración no necesario en la rama **master** en **main.py**
 
 ### [1.0.1] - 2022-03-02
 #### Arreglado
@@ -67,4 +71,4 @@ Su formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y
 
 ### [1.0.0] - 2022-03-02
 #### Añadido
-- Script con las funcionalidades esperadas
+- Script **main.py** con las funcionalidades esperadas
